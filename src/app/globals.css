@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #050505;
+  background-image: radial-gradient(circle at 20% 10%, rgba(56, 189, 248, 0.14), transparent 40%),
+    radial-gradient(circle at 80% 0%, rgba(99, 102, 241, 0.1), transparent 35%);
+}
+
+.glass-panel {
+  @apply border border-white/10 bg-white/5 backdrop-blur-xl;
+}
+
+.portal-ring {
+  animation: portal-spin 12s linear infinite;
+}
+
+.portal-pulse {
+  animation: portal-pulse 2.8s ease-in-out infinite;
+}
+
+@keyframes portal-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes portal-pulse {
+  0%,
+  100% {
+    transform: scale(0.92);
+    opacity: 0.72;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
